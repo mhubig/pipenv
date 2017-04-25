@@ -40,7 +40,7 @@ class TestPipenv():
         c = delegator.run('pipenv install requests')
         print(c.out)
         print(c.return_code)
-        assert c.return_code == -1
+        assert c.return_code == 0
         assert delegator.run('pipenv install requests').return_code == 0
         assert delegator.run('pipenv install pytest --dev').return_code == 0
         assert delegator.run('pipenv install git+https://github.com/kennethreitz/records.git@v0.5.0#egg=records').return_code == 0
