@@ -36,16 +36,8 @@ class TestPipenv():
         os.environ['PIPENV_VENV_IN_PROJECT'] = '1'
 
         assert delegator.run('touch Pipfile').return_code == 0
-        c = delegator.run('python -c "from pipenv.cli import easter_egg; easter_egg(\'requests\')"')
-        print(c.out)
-        print(c.err)
-        print(c.return_code)
 
         assert delegator.run('pipenv --python python').return_code == 0
-        c = delegator.run('pipenv install requests')
-        print(c.out)
-        print(c.return_code)
-        assert c.return_code == 0
         assert delegator.run('pipenv install requests').return_code == 0
         assert delegator.run('pipenv install pytest --dev').return_code == 0
         assert delegator.run('pipenv install git+https://github.com/kennethreitz/records.git@v0.5.0#egg=records').return_code == 0
