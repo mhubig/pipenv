@@ -721,7 +721,8 @@ def format_pip_output(out, r=None):
 
 def easter_egg(package_name):
     if package_name in ['requests', 'maya', 'crayons', 'delegator.py', 'records', 'tablib']:
-        click.echo(u'P.S. You have excellent taste! ✨ 🍰 ✨')
+        #click.echo(u'P.S. You have excellent taste! ✨ 🍰 ✨')
+        print(u'P.S. You have excellent taste! ✨ 🍰 ✨')
 
 
 @click.group(invoke_without_command=True)
@@ -833,7 +834,7 @@ def install(package_name=False, more_packages=False, dev=False, three=False, pyt
             click.echo('{0} {1}'.format(crayons.red('ERROR (PACKAGE NOT INSTALLED):'), e))
 
         # Ego boost.
-        #easter_egg(package_name)
+        easter_egg(package_name)
 
     if lock:
         do_lock(no_hashes=no_hashes)
