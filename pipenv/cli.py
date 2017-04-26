@@ -721,8 +721,7 @@ def format_pip_output(out, r=None):
 
 def easter_egg(package_name):
     if package_name in ['requests', 'maya', 'crayons', 'delegator.py', 'records', 'tablib']:
-        #click.echo(u'P.S. You have excellent taste! ✨ 🍰 ✨')
-        print(u'P.S. You have excellent taste!')
+        click.echo(u'P.S. You have excellent taste! ✨ 🍰 ✨')
 
 
 @click.group(invoke_without_command=True)
