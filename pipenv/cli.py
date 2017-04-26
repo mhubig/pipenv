@@ -834,7 +834,7 @@ def install(package_name=False, more_packages=False, dev=False, three=False, pyt
             click.echo('{0} {1}'.format(crayons.red('ERROR (PACKAGE NOT INSTALLED):'), e))
 
         # Ego boost.
-        easter_egg(package_name)
+        #easter_egg(package_name)
 
     if lock:
         do_lock(no_hashes=no_hashes)

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 
 from mock import patch, Mock, PropertyMock
@@ -6,7 +7,7 @@ import pytest
 import delegator
 import toml
 
-from pipenv.cli import (activate_virtualenv, ensure_proper_casing,
+from pipenv.cli import (activate_virtualenv, ensure_proper_casing, easter_egg,
     parse_download_fname, parse_install_output, pip_install, pip_download, which_pip)
 from pipenv.project import Project
 
@@ -35,6 +36,7 @@ class TestPipenv():
         os.environ['PIPENV_VENV_IN_PROJECT'] = '1'
 
         assert delegator.run('touch Pipfile').return_code == 0
+        easter_egg('requests')
 
         assert delegator.run('pipenv --python python').return_code == 0
         c = delegator.run('pipenv install requests')
